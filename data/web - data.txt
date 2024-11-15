@@ -1,0 +1,8 @@
+https://openpsychometrics.org/_rawdata/
+
+3/26/2019	
+Answers to the Machivallianism Test, a version of the MACH-IV from Christie and Geis (1970).	
+20 likert rated items, 
+30+ additional demographic/other items	
+73,489	
+MACH_data
