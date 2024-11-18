@@ -1,2 +1,4 @@
 pip install pandas
 - load csv file
+pip install matplotlib.pyplot
+pip install py-synthpop
