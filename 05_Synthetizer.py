@@ -63,12 +63,12 @@ with open(config_path, 'w', encoding='utf-8') as file:
     file.write(str(config))
 
 # Save to csv
-synth_path = f"data/synth_MostlyAI.csv"
+synth_path = f"synth/synth_MostlyAI.csv"
 synth_data.to_csv(synth_path, 
                  index=False)
 
 # Save to parquet 
-synth_data.to_parquet('data/synth_MostlyAI.parquet')
+synth_data.to_parquet('synth/synth_MostlyAI.parquet')
 
 ##############################################################################
 ##############################################################################
