@@ -4,7 +4,6 @@
 
 # Load packages
 import pandas as pd
-from utils import table
 import matplotlib.pyplot as plt
 
 # Load data
