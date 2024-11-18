@@ -209,6 +209,12 @@ print(table_filter)
 ## Saving the DataFrame to a Parquet file
 df.to_parquet('data/data_v2.parquet')
 
+# Save to csv
+data_path = f"data/data_v2.csv"
+df.to_csv(data_path, 
+                 index=False)
+
+
 ##############################################################################
 ##############################################################################
 ##############################################################################
