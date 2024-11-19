@@ -14,8 +14,12 @@ import pandas as pd
 from utils import table
 
 # Load data
-path = 'data/data.csv'
-df = pd.read_csv(path, 
+
+## Remove "Modules" from the string
+path_folder = script_dir.replace("\\Modules", "")
+path_file = '\\data\\data.csv'
+
+df = pd.read_csv(path_folder + path_file, 
                  delimiter='\t'
                  )
 
@@ -214,13 +218,13 @@ print(table_filter)
 # https://arrow.apache.org/docs/python/parquet.html
 
 ## Saving the DataFrame to a Parquet file
-df.to_parquet('data/data_v2.parquet')
+path_save = '\\data\\data_v2.parquet'
+df.to_parquet(path_folder + path_save)
 
 # Save to csv
-data_path = f"ata_v2.csv"
-df.to_csv(data_path, 
-                 index=False)
-
+path_save = '\\data\\data_v2.csv'
+df.to_csv(path_folder + path_save, 
+          index=False)
 
 ##############################################################################
 ##############################################################################
