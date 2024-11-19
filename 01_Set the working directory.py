@@ -4,7 +4,7 @@
 
 # Run Python file in Console
 
-# Set the wokrking directory to the folder -----------------------------------
+# Set the working directory to the folder -----------------------------------
 import os
 import sys
 
