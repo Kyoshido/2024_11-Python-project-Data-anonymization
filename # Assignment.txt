@@ -8,7 +8,7 @@ Requirements:
 • [Done]Use functions and concepts we have explained
 • [Done] Use OOP somewhere in your solution
 • [Done] Structure your project
-• Document your project adequately
+• [Done] Document your project adequately
 • [Done] Use git to track your changes
 • [Done] Push your code to a Github repository
 • [Done] Submit the repository and slides

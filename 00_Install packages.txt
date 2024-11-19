@@ -1,7 +1,14 @@
 pip install os
+- set working directory
+
 pip install sys
+- set working directory
 
 pip install pandas
 - load csv file
-pip install matplotlib.pyplot
-pip install DataSynthesizer
+
+pip install matplotlib
+- visualization
+
+pip install mostlyai
+- generate synthetic data
