@@ -2,6 +2,13 @@
 ##############################################################################
 ##############################################################################
 
+"""
+Clean dataset.
+First we select only specific columns.
+Then we check variables one by one and adjust them properly.
+At the end, it is save as data_v2.
+"""
+
 # Load packages
 import pandas as pd
 from utils import table
@@ -210,7 +217,7 @@ print(table_filter)
 df.to_parquet('data/data_v2.parquet')
 
 # Save to csv
-data_path = f"data/data_v2.csv"
+data_path = f"ata_v2.csv"
 df.to_csv(data_path, 
                  index=False)
 

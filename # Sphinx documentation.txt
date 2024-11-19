@@ -1,1 +1,15 @@
 https://samnicholls.net/2016/06/15/how-to-sphinx-readthedocs/
+
+Steps to Set and Use the Root for Sphinx
+   - Use your terminal or command prompt to navigate to this directory¨
+      - cd /path/to/your/project/root
+   - Run sphinx-quickstart:
+      - sphinx-quickstart docs
+
+Set apidoc
+sphinx-apidoc -o docs C:/Users/ma1187200/Documents/Git_repositories/2024_11-Python-project-Data-anonymization¨
+
+Build html 
+.\make.bat html
+
+

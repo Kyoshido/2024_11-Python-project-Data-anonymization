@@ -2,6 +2,11 @@
 ##############################################################################
 ##############################################################################
 
+"""
+Calculate some descriptive statistics to see weaknesses of the data.
+For each variable we calculate frequency table and plot a histogram.
+"""
+
 # Load packages
 import pandas as pd
 import matplotlib.pyplot as plt

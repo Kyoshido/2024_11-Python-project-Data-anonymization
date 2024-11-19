@@ -2,6 +2,10 @@
 ##############################################################################
 ##############################################################################
 
+"""
+Evaluate information loss in the data.
+"""
+
 # Load packages
 import pandas as pd
 import matplotlib.pyplot as plt

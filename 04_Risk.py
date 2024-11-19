@@ -2,6 +2,17 @@
 ##############################################################################
 ##############################################################################
 
+"""
+Calculate risk measuremet to evaluate amount of risk in the data.
+Metric of k-anonimity is used.
+
+k-Anonymity is a privacy model that ensures that each individual in a dataset 
+is indistinguishable from at least k-1 others, thus protecting individuals by 
+grouping them into clusters where each group has at least k members with 
+similar attributes.
+"""
+
+
 # Load packages
 import pandas as pd
 

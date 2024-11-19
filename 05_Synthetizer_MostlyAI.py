@@ -2,6 +2,10 @@
 ##############################################################################
 ##############################################################################
 
+"""
+Generate new data using synthezizer provided by Mostly AI.
+"""
+
 # Load packages
 import pandas as pd
 from mostlyai import MostlyAI

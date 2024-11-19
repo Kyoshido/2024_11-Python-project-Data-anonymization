@@ -2,6 +2,10 @@
 ##############################################################################
 ##############################################################################
 
+"""
+Set the working directory to the folder of the script.
+"""
+
 # Run Python file in Console
 
 # Set the working directory to the folder -----------------------------------
