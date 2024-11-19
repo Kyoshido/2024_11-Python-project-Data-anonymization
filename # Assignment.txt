@@ -5,8 +5,8 @@ Presentation: individually
 • [Done] Explain challenges and errors you encountered and how you solved them
 
 Requirements:
-• Use functions and concepts we have explained
-• Use OOP somewhere in your solution
+• [Done]Use functions and concepts we have explained
+• [Done] Use OOP somewhere in your solution
 • [Done] Structure your project
 • Document your project adequately
 • [Done] Use git to track your changes
