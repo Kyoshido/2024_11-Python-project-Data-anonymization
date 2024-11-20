@@ -12,7 +12,6 @@ grouping them into clusters where each group has at least k members with
 similar attributes.
 """
 
-
 # Load packages
 import pandas as pd
 

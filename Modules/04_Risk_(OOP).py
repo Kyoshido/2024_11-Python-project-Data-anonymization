@@ -12,13 +12,16 @@ grouping them into clusters where each group has at least k members with
 similar attributes.
 """
 
-
 # Load packages
 import pandas as pd
 
 # Load data
-path = 'data/data_v2.parquet'
-df = pd.read_parquet(path)
+
+## Remove "Modules" from the string
+path_folder = script_dir.replace("\\Modules", "")
+path_file = '\\data\\data_v2.parquet'
+
+df = pd.read_parquet(path_folder + path_file)
 
 # k-anonymity ----------------------------------------------------------------
 
@@ -87,7 +90,7 @@ class AnonymizationTool:
 # Usage Example --------------------------------------------------------------
 
 # Initialize the Tool:
-anonymizer = AnonymizationTool('data/data_v2.parquet')
+anonymizer = AnonymizationTool(path_folder + path_file)
 
 # Set Quasi-Identifiers:
 anonymizer.set_quasi_identifiers(["age", "gender", "married", "education"])
@@ -100,7 +103,6 @@ risk_ok = anonymizer.evaluate_risk(threshold=5)
 
 # Display Grouped Counts:
 grouped_counts = anonymizer.display_grouped_counts()
-
 
 ##############################################################################
 ##############################################################################

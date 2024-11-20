@@ -12,8 +12,12 @@ from mostlyai import MostlyAI
 import random # for random.seed()
 
 # Load data
-path = 'data/data_v2.parquet'
-df = pd.read_parquet(path)
+
+## Remove "Modules" from the string
+path_folder = script_dir.replace("\\Modules", "")
+path_file = '\\data\\data_v2.parquet'
+
+df = pd.read_parquet(path_folder + path_file)
 
 # Mostly Ai synthetizer ------------------------------------------------------
 
@@ -62,17 +66,21 @@ synth_data = synth.data()
 # Save ----------------------------------------------------------------------
 
 # Save config
-config_path = f"config_MostlyAI.txt"
-with open(config_path, 'w', encoding='utf-8') as file:
+path_save = '\\synth\\config_MostlyAI.txt'
+with open(path_folder + path_save, 
+          'w', 
+          encoding='utf-8'
+          ) as file:
     file.write(str(config))
 
 # Save to csv
-synth_path = f"synth/synth_MostlyAI.csv"
-synth_data.to_csv(synth_path, 
-                 index=False)
+path_save = '\\synth\\synth_MostlyAI.csv'
+synth_data.to_csv(path_folder + path_save, 
+                  index=False)
 
 # Save to parquet 
-synth_data.to_parquet('synth/synth_MostlyAI.parquet')
+path_save = '\\synth\\synth_MostlyAI.parquet'
+synth_data.to_parquet(path_folder + path_save)
 
 ##############################################################################
 ##############################################################################
