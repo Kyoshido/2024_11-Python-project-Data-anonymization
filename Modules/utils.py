@@ -300,4 +300,8 @@ def save_categorical_comparisons(orig, mostlyai, xgboost, categorical_columns, o
 ###############################################################################
 
 #testing the conflict 
+<<<<<<< HEAD
 # testing conflict with colleague
+=======
+# testing confittttttttttttt
+>>>>>>> 4e7ab2b7f7defb5250470707908eb79e4ee43ba4
