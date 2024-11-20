@@ -9,8 +9,8 @@ Evaluate information loss in the data visually.
 # Load packages
 import pandas as pd
 import numpy as np
-from utils import save_numerical_comparisons
-from utils import save_categorical_comparisons
+from plots import save_numerical_comparisons
+from plots import save_categorical_comparisons
 
 # Load data
 
