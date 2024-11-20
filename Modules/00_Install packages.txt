@@ -12,3 +12,12 @@ pip install matplotlib
 
 pip install mostlyai
 - generate synthetic data
+
+pip install numpy
+- mathematical operations and generate random values
+
+pip install sklearn
+- data training and evaluation
+
+pip install xgboost
+- for xgboost
