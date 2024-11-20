@@ -3,13 +3,12 @@
 ##############################################################################
 
 """
-Evaluate information loss in the data.
+Evaluate information loss in the data numerically.
 """
 
 # Load packages
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Load data
 
@@ -26,7 +25,6 @@ path_file = '\\synth\\synth_XGBoost_v2.parquet'
 df_XGBoost = pd.read_parquet(path_folder + path_file)
 
 # Information loss - Numerical comparison ------------------------------------
-
 
 # Function to create comparison table for numerical variables
 def create_numerical_comparison_table(orig, mostlyai, xgboost, numerical_columns):
