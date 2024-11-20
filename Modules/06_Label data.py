@@ -10,6 +10,7 @@ After that it is saved with label "_v2".
 # Load packages
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from utils import decode_synthetic_data
 
 # Load data
 
@@ -29,14 +30,6 @@ for col in df_orig.select_dtypes(include=['object']).columns:
     le = LabelEncoder()
     le.fit(df_orig[col])  # Fit to original data
     label_encoders[col] = le
-
-# Decode the synthetic data
-def decode_synthetic_data(synthetic_data, label_encoders):
-    decoded_data = synthetic_data.copy()
-    for col, encoder in label_encoders.items():
-        if col in decoded_data.columns:  # Ensure the column exists in synthetic data
-            decoded_data[col] = encoder.inverse_transform(decoded_data[col].astype(int))
-    return decoded_data
 
 # Decode the synthetic data
 decoded_synthetic_data = decode_synthetic_data(df_synt, label_encoders)

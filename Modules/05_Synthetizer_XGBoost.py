@@ -11,8 +11,8 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 import xgboost as xgb
-
 from sklearn.preprocessing import LabelEncoder
+from utils import generate_synthetic_data_XGBoost
 
 # Load data
 
@@ -69,18 +69,6 @@ params = {
 model = xgb.train(params, dtrain, num_boost_round=100)
 
 # Step 3: Generate synthetic data ............................................
-def generate_synthetic_data_XGBoost(model, original_data, n_samples=500):
-    """
-    Generate synthetic data based on the trained XGBoost model.
-    """
-    sampled_data = original_data.sample(n=n_samples, replace=True, random_state=42)
-    dmatrix = xgb.DMatrix(sampled_data)
-    synthetic_targets = model.predict(dmatrix).argmax(axis=1)  # Predicted cluster labels
-    synthetic_data = sampled_data.copy()
-    synthetic_data['synthetic_target'] = synthetic_targets
-    return synthetic_data
-
-# Generate synthetic data
 synth_data = generate_synthetic_data_XGBoost(model, X, 
                                              n_samples = n_size)
 

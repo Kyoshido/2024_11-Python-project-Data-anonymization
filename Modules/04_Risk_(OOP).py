@@ -14,6 +14,7 @@ similar attributes.
 
 # Load packages
 import pandas as pd
+from utils import evaluate_k_anonymity
 
 # Load data
 
@@ -23,74 +24,10 @@ path_file = '\\data\\data_v2.parquet'
 
 df = pd.read_parquet(path_folder + path_file)
 
-# k-anonymity ----------------------------------------------------------------
-
-class AnonymizationTool:
-    def __init__(self, data_path):
-        """
-        Initialize the tool with the dataset path.
-        """
-        self.data = pd.read_parquet(data_path)
-        self.quasi_identifiers = []
-
-    def set_quasi_identifiers(self, identifiers):
-        """
-        Set the quasi-identifiers to be used for anonymization.
-        """
-        self.quasi_identifiers = identifiers
-
-    def calculate_k_anonymity(self):
-        """
-        Calculate k-anonymity based on the current quasi-identifiers.
-        """
-        if not self.quasi_identifiers:
-            raise ValueError("Quasi-identifiers must be set before calculating k-anonymity.")
-        
-        grouped = (
-            self.data.groupby(self.quasi_identifiers)
-                .size()
-                .reset_index(name='count')
-                .sort_values(by='count', ascending=True)
-        )
-        
-        k_anonymity = grouped['count'].min()
-        print(f'K-anonymity for the given combination of quasi-identifiers ({self.quasi_identifiers}): {k_anonymity}')
-        return k_anonymity
-
-    def evaluate_risk(self, threshold):
-        """
-        Evaluate the re-identification risk based on k-anonymity.
-        """
-        k_anonymity = self.calculate_k_anonymity()
-        if k_anonymity < threshold:
-            print(f"Warning: The dataset does not meet the k-anonymity threshold ({threshold}).")
-        else:
-            print(f"The dataset meets the k-anonymity threshold ({threshold}).")
-        return k_anonymity >= threshold
-
-    def display_grouped_counts(self):
-        """
-        Display the grouped counts for the current quasi-identifiers.
-        """
-        if not self.quasi_identifiers:
-            raise ValueError("Quasi-identifiers must be set before displaying grouped counts.")
-        
-        grouped = (
-            self.data.groupby(self.quasi_identifiers)
-            .size()
-            .reset_index(name='count')
-            .sort_values(by='count', ascending=True)
-        )
-        print("Grouped Counts:")
-        print(grouped)
-        return grouped
-
-
-
 # Usage Example --------------------------------------------------------------
 
 # Initialize the Tool:
-anonymizer = AnonymizationTool(path_folder + path_file)
+anonymizer = evaluate_k_anonymity(path_folder + path_file)
 
 # Set Quasi-Identifiers:
 anonymizer.set_quasi_identifiers(["age", "gender", "married", "education"])
