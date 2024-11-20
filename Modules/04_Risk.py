@@ -17,8 +17,12 @@ similar attributes.
 import pandas as pd
 
 # Load data
-path = 'data/data_v2.parquet'
-df = pd.read_parquet(path)
+
+## Remove "Modules" from the string
+path_folder = script_dir.replace("\\Modules", "")
+path_file = '\\data\\data_v2.parquet'
+
+df = pd.read_parquet(path_folder + path_file)
 
 # k-anonymity ----------------------------------------------------------------
 
