@@ -100,13 +100,11 @@ print(reformatted_categorical_comparison)
 # Save to csv
 path_save = '\\utility\\numerical_comparison.csv'
 numerical_comparison_table.to_csv(
-                  path_folder + path_save, 
-                  index=False)
+                  path_folder + path_save)
 
 path_save = '\\utility\\categorical_comparison.csv'
 reformatted_categorical_comparison.to_csv(
-                  path_folder + path_save, 
-                  index=False)
+                  path_folder + path_save)
 
 ##############################################################################
 ##############################################################################
