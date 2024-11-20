@@ -24,7 +24,9 @@ path_file = '\\data\\data_v2.parquet'
 
 df = pd.read_parquet(path_folder + path_file)
 
-# Usage Example --------------------------------------------------------------
+##############################################################################
+
+# Evaluate k-anonymity -------------------------------------------------------
 
 # Initialize the Tool:
 anonymizer = evaluate_k_anonymity(path_folder + path_file)

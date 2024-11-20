@@ -27,6 +27,8 @@ df_MostlyAI = pd.read_parquet(path_folder + path_file)
 path_file = '\\synth\\synth_XGBoost_v2.parquet'
 df_XGBoost = pd.read_parquet(path_folder + path_file)
 
+##############################################################################
+
 # Information loss - Numerical comparison ------------------------------------
 
 # Identify numerical and categorical columns

@@ -23,6 +23,8 @@ path_file = '\\data\\data_v2.parquet'
 
 df = pd.read_parquet(path_folder + path_file)
 
+##############################################################################
+
 # k-anonymity ----------------------------------------------------------------
 
 # Define the columns to use for k-anonymity

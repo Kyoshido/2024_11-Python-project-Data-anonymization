@@ -22,6 +22,8 @@ df_synt = pd.read_parquet(path_folder + path_file)
 path_file = '\\data\\data_v2.parquet'
 df_orig = pd.read_parquet(path_folder + path_file)
 
+##############################################################################
+
 # Label data -----------------------------------------------------------------
 
 # Rebuild Label Encoders from the original file
